@@ -1,38 +1,6 @@
 """
 SHL Catalog Scraper — Production Version
 ==========================================
-Written from the REAL page structure of shl.com/products/product-catalog/
-
-KEY FINDINGS from inspecting the live page:
-─────────────────────────────────────────────
-1. URL pattern: https://www.shl.com/products/product-catalog/
-   (NOT /solutions/products/ — catalog lives under /products/)
-
-2. Pagination uses PLAIN query params — NO JavaScript needed:
-     ?start=0&type=1   → Individual Test Solutions, page 1
-     ?start=12&type=1  → page 2
-     ?start=372&type=1 → page 32 (last page — confirmed from live pagination)
-   type=1 = Individual Test Solutions  ← we want this
-   type=2 = Pre-packaged Job Solutions ← IGNORE
-
-3. Each page shows TWO tables. We target the one with header:
-   "Individual Test Solutions"
-
-4. Table columns per row:
-   [0] name + <a href="/products/product-catalog/view/slug/">
-   [1] Remote Testing  — <img> present = "Yes", else "No"
-   [2] Adaptive/IRT    — <img> present = "Yes", else "No"
-   [3] Test Type       — space-separated letters: K, A B P, etc.
-
-5. Total: 32 pages × 12 items = up to 384 Individual Test Solutions
-
-6. requests + BeautifulSoup is SUFFICIENT for listing pages.
-   No Playwright needed — tables are server-rendered HTML.
-
-Run: python scraper/scrape_catalog.py
-Run (fast mode): python scraper/scrape_catalog.py --skip-detail
-"""
-
 import json
 import os
 import re
@@ -59,7 +27,7 @@ HEADERS = {
 }
 
 
-# ── Utilities ──────────────────────────────────────────────────────────────
+# Utilities 
 
 def get_page(url: str, retries: int = 3) -> BeautifulSoup:
     """Fetch a URL with retry + exponential backoff."""

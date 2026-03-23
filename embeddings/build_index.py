@@ -1,12 +1,3 @@
-"""
-Step 2: Build Vector Embeddings Index
----------------------------------------
-Reads data/assessments.json, creates sentence embeddings,
-and stores them in a ChromaDB vector database for fast retrieval.
-
-Run: python embeddings/build_index.py
-"""
-
 import json
 import os
 import sys

@@ -1,13 +1,3 @@
-"""
-Step 5: Evaluate on Train Set
--------------------------------
-Computes Mean Recall@10 against the labeled train set from Gen_AI_Dataset.xlsx.
-
-Uses YOUR dataset directly — no manual input needed.
-
-Run: python evaluation/evaluate.py
-"""
-
 import json
 import os
 import sys

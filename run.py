@@ -1,16 +1,3 @@
-"""
-run.py — Full Pipeline Orchestrator
--------------------------------------
-Runs all steps in order with clear progress output.
-Run this after setting GEMINI_API_KEY in your .env file.
-
-Usage:
-  python run.py                 # Run all steps
-  python run.py --skip-scrape   # Skip scraping (if assessments.json already exists)
-  python run.py --eval-only     # Only run evaluation on train set
-  python run.py --predict-only  # Only generate test predictions CSV
-"""
-
 import argparse
 import os
 import sys

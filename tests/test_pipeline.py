@@ -1,11 +1,3 @@
-"""
-Unit Tests
------------
-Tests for API endpoints and core logic.
-
-Run: pytest tests/ -v
-"""
-
 import pytest
 import json
 import os

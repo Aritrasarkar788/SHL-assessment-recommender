@@ -1,18 +1,3 @@
-"""
-Step 6: Generate Test Set Predictions CSV
-------------------------------------------
-Runs your recommender on all 9 test queries from Gen_AI_Dataset.xlsx
-and saves predictions in the required submission format:
-
-  Query,Assessment_url
-  Query 1,https://www.shl.com/...
-  Query 1,https://www.shl.com/...
-  Query 2,https://www.shl.com/...
-  ...
-
-Run: python evaluation/generate_predictions.py
-"""
-
 import os
 import sys
 import csv
